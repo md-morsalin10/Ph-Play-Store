@@ -7,20 +7,27 @@ import RootLayout from './Layout/RootLayout';
 import HomePage from './pages/HomePage/HomePage';
 import AppPage from './pages/AppPage/AppPage';
 import InstalledApps from './pages/InstalledApps/InstalledApps';
+import AppsDetails from './pages/AppsDetails/AppsDetails';
+import InstallAppsProvider from './context/InstallAppsProvider';
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
-    children:[
+    children: [
       {
         index: true,
         Component: HomePage
       },
       {
-        path:"/app",
-        loader: ()=> fetch('/data.json'),
+        path: "/app",
+        loader: () => fetch('/data.json'),
         Component: AppPage
+      },
+      {
+        path: "/app/:id",
+        loader: () => fetch('/data.json'),
+        Component: AppsDetails
       },
       {
         path: "/installation",
@@ -32,6 +39,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <InstallAppsProvider>
+      <RouterProvider router={router} />
+    </InstallAppsProvider>
   </StrictMode>,
 )

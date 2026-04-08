@@ -19,6 +19,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/app",
+        loader: ()=> fetch('/data.json'),
         Component: AppPage
       },
       {

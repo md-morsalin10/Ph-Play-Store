@@ -28,11 +28,11 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li><NavLink to={"/"} className={({isActive})=> isActive && `bg-linear-to-r font-bold from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent`}>Home</NavLink></li>
+                        <li><NavLink to={"/"} className={({isActive})=> isActive && 'bg-linear-to-r font-bold from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent'}>Home</NavLink></li>
 
-                        <li><NavLink className={({isActive})=>isActive && `bg-linear-to-r font-bold from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent`} to={"/app"}>Apps</NavLink></li>
+                        <li><NavLink className={({isActive})=> isActive && 'bg-linear-to-r font-bold from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent'} to={"/app"}>Apps</NavLink></li>
 
-                        <li><NavLink className={({isActive})=>isActive && `bg-linear-to-r font-bold from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent`} to={"/installation"}>Installation</NavLink></li>
+                        <li><NavLink className={({isActive})=> isActive && 'bg-linear-to-r font-bold from-[#632EE3] to-[#9F62F2] bg-clip-text text-transparent'} to={"/installation"}>Installation</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

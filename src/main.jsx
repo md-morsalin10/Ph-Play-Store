@@ -9,6 +9,8 @@ import AppPage from './pages/AppPage/AppPage';
 import InstalledApps from './pages/InstalledApps/InstalledApps';
 import AppsDetails from './pages/AppsDetails/AppsDetails';
 import InstallAppsProvider from './context/InstallAppsProvider';
+import Error from './components/Error/Error';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +35,8 @@ const router = createBrowserRouter([
         path: "/installation",
         Component: InstalledApps
       }
-    ]
+    ],
+    errorElement: <Error></Error>
   },
 ]);
 
@@ -42,5 +45,6 @@ createRoot(document.getElementById('root')).render(
     <InstallAppsProvider>
       <RouterProvider router={router} />
     </InstallAppsProvider>
+    <ToastContainer />
   </StrictMode>,
 )

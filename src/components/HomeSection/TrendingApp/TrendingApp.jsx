@@ -7,9 +7,9 @@ const TrendingApp = ({app}) => {
     // console.log(app);
     
     return (
-        <Link to={`/app/${app.id}`} className='border border-gray-300 bg-base-200 rounded-2xl space-y-2 p-4'>
-            <div className='flex justify-center items-center h-55 bg-white rounded-2xl m-2'>
-                <img src={app.image} className='h-45 w-45 object-contain' alt="" />
+        <Link to={`/app/${app.id}`} className='group border border-gray-300 bg-base-200 rounded-2xl space-y-2 p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ease-in-out hover:border-purple-400'>
+            <div className='flex justify-center items-center h-55 bg-white rounded-2xl m-2 overflow-hidden'>
+                <img src={app.image} className='h-45 w-45 object-contain transition-transform duration-500 ease-in-out group-hover:scale-110' alt="" />
             </div>
             <div>
                 <h2 className='text-[#001931] text-xl font-medium'>{app.companyName}</h2>

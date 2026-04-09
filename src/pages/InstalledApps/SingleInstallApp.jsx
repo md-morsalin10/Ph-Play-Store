@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { FiDownload } from 'react-icons/fi';
 import { IoStarSharp } from 'react-icons/io5';
 import { InstallAppsContext } from '../../context/InstallAppsContext';
+import { toast } from 'react-toastify';
 
 const SingleInstallApp = ({ iApp }) => {
     const { installApps, setInstallApps } = useContext(InstallAppsContext);
@@ -9,15 +10,16 @@ const SingleInstallApp = ({ iApp }) => {
     const handleUninstall = (iApp) => {
         const filterApp = installApps.filter(ap => ap.id != iApp.id);
         setInstallApps(filterApp);
+        toast.error(`${title} is Uninstall Successful`);
     }
 
     const { downloads, ratingAvg, size, title, image } = iApp
     
     return (
-        <div className='flex justify-between items-center p-5 border my-4 border-gray-300 rounded-2xl bg-white m-3'>
-            <div className='flex justify-center items-center gap-3'>
+        <div className='group flex justify-between items-center p-5 border my-4 border-gray-300 rounded-2xl bg-white m-3 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ease-in-out hover:border-purple-400 '>
+            <div className='flex justify-center items-center gap-3 overflow-hidden'>
                 <div>
-                    <img src={image} className='h-20 w-20 rounded-2xl' alt="" />
+                    <img src={image} className='h-20 w-20 rounded-2xl object-contain transition-transform duration-500 ease-in-out group-hover:scale-110' alt="" />
                 </div>
                 <div>
                     <h2 className='text-xl font-medium text-[#001931]'>{title}</h2>

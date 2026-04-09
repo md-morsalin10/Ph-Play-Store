@@ -5,6 +5,7 @@ import { IoMdStar } from 'react-icons/io';
 import { useLoaderData, useParams } from 'react-router';
 import RatingChart from '../../components/RatingChart/RatingChart';
 import { InstallAppsContext } from '../../context/InstallAppsContext';
+import { toast } from 'react-toastify';
 
 const AppsDetails = () => {
     const params = useParams()
@@ -17,6 +18,7 @@ const AppsDetails = () => {
     
     const handleInstall =()=>{
         setInstallApps([...installApps, filteredApps]);
+         toast.success(`${title} is Install Successful`);
         
     }
     // console.log(installApps);
@@ -24,9 +26,10 @@ const AppsDetails = () => {
 
     return (
         <div className='container mx-auto pt-10 '>
-            <div className='flex justify-baseline gap-4 p-6 pt-4 border bg-base-300 border-slate-300 rounded-2xl'>
-                <div>
-                    <img src={image} className='h-75 w-75 object-contain rounded-3xl' alt="" />
+            <div className='group flex justify-baseline gap-4 p-6 pt-4 border bg-base-300 border-slate-300 rounded-2xl
+            hover:-translate-y-2 hover:shadow-xl transition-all duration-300 ease-in-out hover:border-purple-400'>
+                <div className='group items-center bg-white rounded-2xl m-2 overflow-hidden'>
+                    <img src={image} className='h-75 w-75 object-contain rounded-3xl transition-transform duration-500 ease-in-out group-hover:scale-110' alt="" />
                 </div>
                 <div className='space-y-8'>
                     <div className='space-y-2'>
